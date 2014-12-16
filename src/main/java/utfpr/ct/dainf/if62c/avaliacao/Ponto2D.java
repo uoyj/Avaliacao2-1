@@ -12,11 +12,11 @@ package utfpr.ct.dainf.if62c.avaliacao;
  */
 public abstract class Ponto2D extends Ponto{
 
-    public Ponto2D() {
+    protected Ponto2D() {
         super(0,0,0);
     }
 
-    public Ponto2D(double x, double y, double z) {
+    protected Ponto2D(double x, double y, double z) {
         super(x, y, z);
     }
     

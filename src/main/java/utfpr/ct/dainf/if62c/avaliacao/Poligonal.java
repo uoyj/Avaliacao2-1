@@ -31,7 +31,7 @@ public class Poligonal {
     
     public Ponto2D get(int x)
     {
-        if (this.n < x) return null;
+        if (this.n < x || x < 0) return null;
         
         return v[x];              
     }
