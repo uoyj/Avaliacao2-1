@@ -11,6 +11,51 @@ package utfpr.ct.dainf.if62c.avaliacao;
 public class Ponto {
     private double x, y, z;
 
+    public Ponto() {
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+    }
+
+    public Ponto(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }  
+
+    @Override
+    public String toString() {
+        return String.format(getNome() + "(" + this.x + "," + this.y + "," + this.z + ")");
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Ponto other = (Ponto) obj;
+        if (Double.doubleToLongBits(this.x) != Double.doubleToLongBits(other.x)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.y) != Double.doubleToLongBits(other.y)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.z) != Double.doubleToLongBits(other.z)) {
+            return false;
+        }
+        return true;
+    }
+    
+    public double dist(Ponto P)
+    {
+        return Math.sqrt((P.getX()-this.x)*(P.getX()-this.x) + 
+                (P.getY()-this.y)*(P.getY()-this.y) + (P.getZ()-this.z)*(P.getZ()-this.z));
+    }
+    
+    
     /**
      * Retorna no nome não-qualificado da classe.
      * @return O nome não qualificado da classe.
